@@ -2,8 +2,9 @@ name: Synthetic Test
 run-name: Synthetic Test
 on:
   push:
-    - "**"
-    - "!main"
+    branches:
+      - "**"
+      - "!main"
 jobs:
   test:
     name: Run test
