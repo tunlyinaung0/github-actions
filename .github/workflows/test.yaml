@@ -23,4 +23,4 @@ jobs:
 
       - name: echo
         run: |
-          echo "hello testing 123"
+          echo "hello testing"
