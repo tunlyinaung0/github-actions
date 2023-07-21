@@ -1,16 +1,22 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
+name: Synthetic Test
+run-name: Synthetic Test
+on:
+  push:
+    branches:
+      - "**"
+      - "!main"
 jobs:
-  check-bats-version:
+  test:
+    name: Run test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
-      - run: |
-        export test=testing123!
-        echo $test
+          node-version: "16"
+
+      - name: Test
+        run: yarn ci:install && yarn ci:test
