@@ -20,3 +20,7 @@ jobs:
 
       - name: Test
         run: yarn ci:install && yarn ci:test
+
+      - name: echo
+        run: |
+          echo "hello testing123"
