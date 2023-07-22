@@ -30,4 +30,4 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: tunlyinaung/sample-app:5.1.4
+          tags: tunlyinaung/sample-app:5.1.5
